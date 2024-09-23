@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import fs from 'fs'
 
-// Рекурсивная функция для поиска HTML файлов
 function findHtmlFiles(dir, fileList = []) {
   const files = fs.readdirSync(dir)
 
@@ -19,11 +18,10 @@ function findHtmlFiles(dir, fileList = []) {
 }
 
 export default defineConfig({
-  base: '/uu/', // Путь к вашему репозиторию на GitHub Pages
+  base: '/oo/',
   root: 'src',
   build: {
     outDir: '../dist',
-    emptyOutDir: true,
     rollupOptions: {
       input: findHtmlFiles('src').reduce((acc, filePath) => {
         const relativePath = filePath.substring(filePath.indexOf('src') + 4).replace(/\\/g, '/')
@@ -31,7 +29,7 @@ export default defineConfig({
         return acc
       }, {}),
     },
-    assetsDir: 'assets', // Явно указываем директорию для ассетов
+    assetsDir: 'assets',
   },
   server: {
     port: 3000,
