@@ -19,7 +19,7 @@ function findHtmlFiles(dir, fileList = []) {
 }
 
 export default defineConfig({
-  base: '/oo/', // Путь к вашему репозиторию на GitHub Pages
+  base: '/uu/', // Путь к вашему репозиторию на GitHub Pages
   root: 'src',
   build: {
     outDir: '../dist',
