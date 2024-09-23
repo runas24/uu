@@ -4,13 +4,19 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
+        // Получаем текущий путь
         var path = window.location.pathname;
-        if (path !== '/') {
-            window.location.replace(path + '.html');
+        
+        // Если путь не заканчивается на .html, добавляем его
+        if(!path.endsWith('.html') && path !== '/') {
+            window.location.href = path + '.html';
+        } else {
+            // Если это действительно страница 404, показываем сообщение об ошибке
+            document.write('404 - Page not found');
         }
     </script>
 </head>
 <body>
-    <!-- Можно добавить сообщение, но это не обязательно -->
+    <!-- Здесь можно добавить содержимое для настоящей страницы 404 -->
 </body>
 </html>
