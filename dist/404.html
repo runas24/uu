@@ -7,9 +7,12 @@
         // Получаем текущий путь
         var path = window.location.pathname;
         
+        // Удаляем базовый путь '/oo/' из URL
+        path = path.replace(/^\/oo\//, '/');
+        
         // Если путь не заканчивается на .html, добавляем его
         if(!path.endsWith('.html') && path !== '/') {
-            window.location.href = path + '.html';
+            window.location.href = '/oo' + path + '.html';
         } else {
             // Если это действительно страница 404, показываем сообщение об ошибке
             document.write('404 - Page not found');
