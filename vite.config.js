@@ -18,7 +18,7 @@ function findHtmlFiles(dir, fileList = []) {
 }
 
 export default defineConfig({
-  base: '/oo/',
+  base: '/uu/',
   root: 'src',
   build: {
     outDir: '../dist',
